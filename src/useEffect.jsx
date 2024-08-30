@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import Cards from "./components/cards";
 import Footer from "./components/footer";
 import Header from "./components/header";
+import Feauther from "./components/feauther";
+import Pricing from "./components/pricing";
+import Termonil from "./components/termonil";
 function UseEffect() {
   const [product, setProduct] = useState([]);
   const [search, setSearch] = useState("");
@@ -32,7 +35,7 @@ function UseEffect() {
 
   return (
     <>
-    <Header/>
+      <Header />
       <input
         placeholder="Search"
         onChange={(e) => setSearch(e.target.value)}
@@ -50,7 +53,7 @@ function UseEffect() {
         <option value="200+">200+</option>
       </select>
 
-      <br />
+      <Feauther />
 
       <div className="container px-5 py-24 mx-auto mt-40">
         <div className="flex flex-wrap -m-4">
@@ -61,11 +64,16 @@ function UseEffect() {
               title={product.title}
               price={product.price}
             />
-            
           ))}
         </div>
       </div>
-      <Footer/>
+
+       
+       <Pricing/>
+
+      <Termonil/>
+      
+      <Footer />
     </>
   );
 }
